@@ -1,0 +1,424 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+p a {
+    display: inline;
+}
+
+img,
+svg {
+    display: block;
+    width: 100%;
+    height: inherit;
+}
+
+svg {
+    fill: currentColor;
+}
+
+:root {
+    font-size: 100%;
+    scroll-behavior: smooth;
+
+    --global-bg-header: #e6e7e7;
+    --global-c-h1: #181919;
+    --global-c-nav: #181919;
+    --video-c: #858b8a;
+
+
+}
+
+body {
+    font-family: "Open Sans", serif;
+    hyphens: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.Header {
+    width: 100%;
+
+    background-color: var(--global-bg-header);
+
+    padding: 1.25rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    position: relative;
+}
+
+.Header-h1 {
+
+    font-family: "Afacad Flux", serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    color: var(--global-c-h1);
+}
+
+.Header-h1:hover {
+    color: #4ff9da;
+}
+
+.Nav-ul {
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.25rem;
+
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1875rem;
+    color: var(--global-c-nav);
+}
+
+.Nav-li:hover {
+    font-weight: 800;
+    transition: .5s ease;
+}
+
+.Nav-a--color {
+    color: var(--video-c);
+}
+
+.Header-button {
+    background-color: rgba(0, 255, 255, 0);
+    display: none;
+}
+
+.Header-svg {
+    min-width: 1.875rem;
+}
+
+.Foto-ul {
+    height: 0rem;
+    min-width: 10.625rem;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: start;
+    align-items: start;
+    gap: .125rem;
+
+    position: absolute;
+
+    overflow: hidden;
+
+    transition: .5s ease;
+
+}
+
+.Foto-ul.isVisible {
+    background-color: var(--global-bg-header);
+    min-height: 11.25rem;
+
+    transition: .5s ease;
+
+
+}
+
+.Foto-li {
+    font-weight: 200;
+}
+
+.Foto-li:hover {
+    font-weight: 800;
+}
+
+.Foto-svg {
+    display: none;
+}
+
+.Foto-div {
+    display: flex;
+}
+
+
+
+.Section {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    gap: .9375rem;
+    padding: .9375rem .9375rem;
+
+}
+
+.Section-imgX {
+    background-color: aqua;
+    box-shadow: .75rem .75rem 1.5rem #a8a8a8,
+        -0.75rem -0.75rem 1.5rem #ffffff;
+    cursor: pointer;
+    transition: all .5s ease;
+    grid-row: span ;
+    min-height: 100%;
+
+
+}
+
+.Section-imgX:hover {
+    transform: scale(.95);
+}
+
+.Section-imgX:active {
+    transform: scale(1.2);
+}
+.Section-imgY {
+    background-color: aqua;
+    min-height: 100%;
+    box-shadow: .75rem .75rem 1.5rem #a8a8a8,
+        -0.75rem -0.75rem 1.5rem #ffffff;
+    cursor: pointer;
+    transition: all .5s ease;
+    grid-column: span 2;
+    object-fit: cover;
+
+
+}
+
+.Section-imgY:hover {
+    transform: scale(.95);
+}
+
+.Section-imgY:active {
+    transform: scale(1.2);
+}
+
+
+.Footer-redes {
+
+
+    margin: 3.125rem 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: .625rem;
+
+    color: var(--index-c-svg);
+
+    z-index: 1;
+
+}
+
+.Redes-a {
+    min-width: 1.5625rem;
+}
+
+.Redes-a:hover {
+    transform: scale(1.1);
+}
+
+.Lightbox-X {
+    width: 100%;
+    height: 100%;
+    background-color: #181919db;
+    
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: .625rem;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: all .5s ease;
+}
+
+.Lightbox-X.isActive {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.Lightbox-X-button {
+    width: 1.5625rem;
+    background-color: rgba(255, 0, 0, 0);
+    color: #ffffff;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.Lightbox-X-button:hover {
+    transform: scale(.85);
+}
+
+.Lightbox-X-button:active {
+    transform: scale(1.2);
+}
+
+.Lightbox-X-div {
+    width: 25%;
+}
+
+.Lightbox-X-img {
+    box-shadow: 0 0 5rem 0 rgba(0, 0, 0, .4);
+}
+
+.Lightbox-Y {
+    width: 100%;
+    height: 100%;
+    background-color: #181919d8;
+    
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: .625rem;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: all .5s ease;
+}
+
+.Lightbox-Y.isActive {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.Lightbox-Y-button {
+    width: 1.5625rem;
+    background-color: rgba(255, 0, 0, 0);
+    color: #ffffff;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.Lightbox-Y-button:hover {
+    transform: scale(.95);
+}
+
+.Lightbox-Y-button:active {
+    transform: scale(1.2);
+}
+
+.Lightbox-Y-div {
+    width: 60%;
+
+
+}
+
+.Lightbox-Y-img {
+    object-fit: cover;
+    box-shadow: 0 0 5rem 0 rgba(0, 0, 0, .4);
+
+
+
+}
+
+@media(max-width: 800px) {
+    .Header {
+        flex-wrap: wrap;
+    }
+
+    .Header-nav {
+        width: 100%;
+        background-color: var(--global-bg-header);
+        position: absolute;
+        top: 5.625rem;
+        left: 0;
+
+
+
+        height: 0vh;
+        overflow: hidden;
+        transition: .2s ease;
+    }
+
+    .Header-nav.isVisible {
+        min-height: 50vh;
+        padding: 1.875rem;
+
+    }
+
+    .Nav-ul {
+        flex-direction: column;
+    }
+
+    .Header-button {
+        display: block;
+    }
+
+    .Header-button:active {
+        width: 2.1875rem;
+    }
+
+    .Foto-ul {
+        display: block;
+
+    }
+
+    .foto-ul-isVisible {
+        min-height: 40vh;
+
+    }
+
+    .Foto-svg {
+        display: block;
+    }
+
+    .Section {
+        display: flex;
+        flex-flow: column nowrap;
+    }
+
+    .Lightbox-Y-div {
+        width: 90%;
+    }
+
+    .Lightbox-X-div {
+        width: 55%;
+    }
+
+}
+
+@media(max-width: 550px) {
+    
+    .Lightbox-Y-div {
+        width: 98%;
+    }
+
+    .Lightbox-X-div {
+        width: 75%;
+    }
+
+}
